@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -euo pipefail
+
+LFSVER=1.1.1
+
+(
+	cd ~
+	curl -sLo - https://github.com/github/git-lfs/releases/download/v${LFSVER}/git-lfs-linux-amd64-${LFSVER}.tar.gz | tar xzvf -
+)
+
+cd "$(dirname ${BASH_SOURCE[0]})"
+~/git-lfs-${LFSVER}/git-lfs pull

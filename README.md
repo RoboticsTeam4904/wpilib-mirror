@@ -11,7 +11,7 @@ In your `.travis.yml`, add the following line:
 
 ```yaml
 install:
-- git clone https://github.com/chopshop-166/wpilib-mirror.git ~/wpilib
+- git clone https://github.com/chopshop-166/wpilib-mirror.git ~/wpilib && ~/wpilib/bootstrap
 ```
 
 Changes to Base WPILib
@@ -21,4 +21,8 @@ Changes to Base WPILib
 * `build.properties` has the team number removed
 	* This should be set in the team's repository
 * `.gitattributes`
-	* Allows file tracking using [git lfs](https://git-lfs.github.com/), which should be a bit less of a data burden
+	* Allows file tracking using [git lfs][], which should be a bit less of a data burden
+* `bootstrap`
+	* Bash script to download [git lfs][] an use it to pull binary files
+
+[git lfs]: https://git-lfs.github.com/
